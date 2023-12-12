@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="581.0" prefWidth="740.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="biblioteca.controllers.FormSocioController">
+   <children>
+      <BorderPane fx:id="borderPane" prefHeight="581.0" prefWidth="740.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" styleClass="pane" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="txtDni" layoutX="110.0" layoutY="60.0" onKeyReleased="#txtDniOnKeyReleased" onKeyTyped="#txtDniOnKeyTyped" styleClass="textfield" />
+                  <TextField fx:id="txtNombre" layoutX="110.0" layoutY="180.0" onKeyReleased="#txtNombreOnKeyReleased" onKeyTyped="#txtNombreOnKeyTyped" styleClass="textfield" />
+                  <Label layoutX="20.0" layoutY="70.0" styleClass="common-label" text="DNI" />
+                  <Label layoutX="20.0" layoutY="190.0" styleClass="common-label" text="Nombre" />
+                  <Label layoutX="380.0" layoutY="70.0" styleClass="common-label" text="Email" />
+                  <Label layoutX="380.0" layoutY="190.0" styleClass="common-label" text="Teléfono" />
+                  <Label layoutX="380.0" layoutY="310.0" styleClass="common-label" text="Dirección" />
+                  <TextField fx:id="txtTelefono" layoutX="470.0" layoutY="180.0" onKeyReleased="#txtTelefonoOnKeyReleased" onKeyTyped="#txtTelefonoOnKeyTyped" styleClass="textfield" />
+                  <TextField fx:id="txtEmail" layoutX="470.0" layoutY="60.0" onKeyReleased="#txtEmailOnKeyReleased" onKeyTyped="#txtEmailOnKeyTyped" styleClass="textfield" />
+                  <TextField fx:id="txtDireccion" layoutX="470.0" layoutY="300.0" onKeyReleased="#txtDireccionOnKeyReleased" onKeyTyped="#txtDireccionOnKeyTyped" styleClass="textfield" />
+                  <Label layoutX="20.0" layoutY="310.0" styleClass="common-label" text="Apellidos" />
+                  <TextField fx:id="txtApellidos" layoutX="110.0" layoutY="300.0" onKeyReleased="#txtApellidosOnKeyReleased" onKeyTyped="#txtApellidosOnKeyTyped" styleClass="textfield" />
+                  <Label fx:id="lblErrorDni" layoutX="110.0" layoutY="100.0" styleClass="error-label" textFill="#fb0000" />
+                  <Label fx:id="lblErrorEmail" layoutX="470.0" layoutY="100.0" styleClass="error-label" textFill="#fb0000" />
+                  <Label fx:id="lblErrorTel" layoutX="470.0" layoutY="224.0" styleClass="error-label" textFill="#fb0000" />
+                  <Label fx:id="lblError" layoutX="211.0" layoutY="429.0" prefHeight="21.0" prefWidth="324.0" styleClass="error-label" textFill="#fb0000">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </center>
+         <bottom>
+            <Pane prefHeight="117.0" prefWidth="740.0" styleClass="pane" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="btnGuardar" layoutX="150.0" layoutY="29.0" mnemonicParsing="false" onAction="#btnGuardarOnAction" prefHeight="60.0" prefWidth="140.0" text="Guardar" />
+                  <Button fx:id="btnCancelar" layoutX="450.0" layoutY="29.0" mnemonicParsing="false" onAction="#btnCancelarOnAction" prefHeight="60.0" prefWidth="140.0" text="Cancelar" />
+               </children>
+            </Pane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

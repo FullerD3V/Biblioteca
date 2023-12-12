@@ -1,0 +1,146 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 8 Nov, 2023, 2:02:03 PM
+    Author     : fullerd3v
+*/
+
+* {
+    -fx-primary : #2A2E37;
+    -fx-secondary : #FFFF8D;
+    -fx-tertiary : #BDBD82;
+    -fx-primarytext : #B2B2B2;
+    -fx-my-menu-color: #263238;
+    -fx-my-menu-color-highlighted: #455a64;
+    -fx-my-menu-color-pressed: #5fabcf;
+    -fx-my-menu-font-color: #FFFFFF;
+    -fx-my-menu-font-color-highlighted: #FFFFFF; 
+}
+
+.menuPane{
+    -fx-background-color:-fx-my-menu-color;
+}
+
+.menuButton{
+    -fx-text-fill: white;
+    -fx-background-color: none;
+    -fx-border-color: none;
+    -fx-border-radius: 0px;
+    -fx-background-radius: 0px;
+    -fx-font-size: 13px;
+}
+
+.menuButton:hover{
+    -fx-border-color: -fx-my-menu-color-highlighted;
+    -fx-background-color: -fx-my-menu-color-highlighted;
+    -fx-text-fill: white;
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+    -fx-scale-z: 1;
+}
+
+.menuButton:pressed{
+    -fx-border-color: -fx-my-menu-color-pressed;
+    -fx-background-color: -fx-my-menu-color-pressed;
+    -fx-text-fill: white;
+}
+
+.menuBar {
+    -fx-background-color: -fx-my-menu-color;
+}
+
+/*** Top-level menu itself (not selected / hovered) ***/
+.menuBar > .container > .menu-button {
+    -fx-background-color: -fx-my-menu-color;
+}
+
+/*** Top-level menu's label (not selected / hovered) ***/
+.menuBar > .container > .menu-button > .label {
+    -fx-text-fill: -fx-my-menu-font-color;
+}
+
+/*** Top-level menu's label (disabled) ***/
+.menuBar > .container > .menu-button > .label:disabled {
+    -fx-opacity: 1.0;
+}
+
+/*** Top-level menu itself (selected / hovered) ***/
+.menuBar > .container > .menu-button:hover,
+.menuBar > .container > .menu-button:focused,
+.menuBar > .container > .menu-button:showing{
+    -fx-background-color: -fx-my-menu-color-highlighted;
+}
+
+.menuBar > .container > .menu-button:pressed{
+    -fx-background-color: -fx-my-menu-color-pressed;
+}
+
+/*** Top-level menu's label (selected / hovered) ***/
+.menuBar > .container > .menu-button:hover > .label,
+.menuBar > .container > .menu-button:focused > .label,
+.menuBar > .container > .menu-button:showing > .label {
+    -fx-text-fill: -fx-my-menu-font-color-highlighted;
+}
+
+/* MENU ITEM (children of a MENU BUTTON) */
+/*** The item itself (not hovered / focused) ***/
+.menu-item {
+    -fx-background-color: -fx-my-menu-color; 
+}
+
+/*** The item's label (not hovered / focused) ***/   
+.menu-item .label {
+    -fx-text-fill: -fx-my-menu-font-color;
+}
+
+/*** The item's label (disabled) ***/   
+.menu-item .label:disabled {
+    -fx-opacity: 1.0;
+}
+
+.menuLibros > .label{
+    -fx-graphic:url(/biblioteca/assets/iconLibros.png);
+}
+
+.menuSocios > .label{
+    -fx-graphic:url(/biblioteca/assets/iconSocio.png);
+}
+.menuAdmin > .label{
+    -fx-graphic:url(/biblioteca/assets/iconAdmin.png);
+}
+.menuPrestamos > .label{
+    -fx-graphic:url(/biblioteca/assets/iconPrestamo.png);
+}
+.menuTema > .label{
+    -fx-graphic:url(/biblioteca/assets/iconTema.png);
+}
+.menuExit > .label{
+    -fx-graphic:url(/biblioteca/assets/iconExit.png);
+}
+
+.menu-item .accelerator-text{
+    -fx-graphic: none;
+}
+
+/*** The item itself (hovered / focused) ***/
+.menu-item:focused, .menu-item:hovered {
+    -fx-background-color: -fx-my-menu-color-highlighted; 
+}
+
+/*** The item's label (hovered / focused) ***/  
+.menu-item:focused .label, .menu-item:hovered .label {
+    -fx-text-fill: -fx-my-menu-font-color-highlighted;
+}
+
+/* CONTEXT MENU */
+/*** The context menu that contains a menu's menu items ***/  
+.context-menu {
+    -fx-background-color: -fx-my-menu-color; 
+}
+
+.separator{
+    -fx-background-color: gray;
+}

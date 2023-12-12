@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="643.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="biblioteca.controllers.FormPrestamoController">
+   <children>
+      <BorderPane fx:id="borderPane" prefHeight="581.0" prefWidth="740.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" styleClass="pane" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="txtSocio" layoutX="210.0" layoutY="32.0" onKeyReleased="#txtSocioOnKeyReleased" onKeyTyped="#txtSocioOnKeyTyped" styleClass="textfield" />
+                  <TextField fx:id="txtLibro" layoutX="210.0" layoutY="116.0" onKeyReleased="#txtLibroOnKeyReleased" onKeyTyped="#txtLibroOnKeyTyped" styleClass="textfield" />
+                  <Label layoutX="122.0" layoutY="37.0" styleClass="common-label" text="DNI Socio" />
+                  <Label layoutX="99.0" layoutY="121.0" styleClass="common-label" text="Código Libro" />
+                  <Label layoutX="134.0" layoutY="204.0" styleClass="common-label" text="Limite" />
+                  <DatePicker fx:id="dateLimite" layoutX="210.0" layoutY="199.0" prefHeight="26.0" prefWidth="210.0" styleClass="date-picker" />
+                  <Label fx:id="lblErrorSocio" layoutX="225.0" layoutY="74.0" styleClass="error-label" textFill="#fb0000" />
+                  <Label fx:id="lblErrorLibro" layoutX="225.0" layoutY="156.0" styleClass="error-label" textFill="#fb0000" />
+                  <Label fx:id="lblErrorLimite" layoutX="225.0" layoutY="232.0" styleClass="error-label" textFill="#fb0000" />
+                  <Label fx:id="lblError" layoutX="140.0" layoutY="259.0" prefHeight="21.0" prefWidth="329.0" styleClass="error-label" textFill="#fb0000">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="439.0" layoutY="191.0" text="*Fecha límite por" textFill="#e10606">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Label>
+                  <Label layoutX="439.0" layoutY="211.0" text=" defecto 2 semanas" textFill="#e10606">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Label>
+                  <ComboBox fx:id="comboGenero" layoutX="433.0" layoutY="90.0" onAction="#comboGeneroOnAction" prefWidth="150.0" promptText="Elegir genero" />
+                  <ComboBox fx:id="comboLibro" layoutX="433.0" layoutY="143.0" onAction="#comboLibroOnAction" prefWidth="150.0" promptText="Buscar libro" />
+               </children>
+            </Pane>
+         </center>
+         <bottom>
+            <Pane prefHeight="117.0" prefWidth="740.0" styleClass="pane" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="btnGuardar" layoutX="114.0" layoutY="29.0" mnemonicParsing="false" onAction="#btnGuardarOnAction" prefHeight="60.0" prefWidth="140.0" text="Guardar" />
+                  <Button fx:id="btnCancelar" layoutX="380.0" layoutY="29.0" mnemonicParsing="false" onAction="#btnCancelarOnAction" prefHeight="60.0" prefWidth="140.0" text="Cancelar" />
+               </children>
+            </Pane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

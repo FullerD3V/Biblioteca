@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="biblioteca.controllers.TablaSocioController">
+   <left>
+       <Pane prefHeight="640.0" prefWidth="250.0" styleClass="pane" BorderPane.alignment="CENTER">
+           <children>
+                <Label fx:id="lblDni" layoutX="14.0" layoutY="140.0" prefWidth="240.0" styleClass="common-label" text="DNI" />
+                <Label fx:id="lblNombre" layoutX="14.0" layoutY="220.0" prefWidth="240.0" styleClass="common-label" text="Nombre" />
+                <Label fx:id="lblApellidos" layoutX="14.0" layoutY="300.0" prefWidth="240.0" styleClass="common-label" text="Apellidos" />
+                <Label fx:id="lblEmail" layoutX="14.0" layoutY="380.0" prefWidth="240.0" styleClass="common-label" text="Correo electrónico" />
+                <Label fx:id="lblTelefono" layoutX="14.0" layoutY="460.0" prefWidth="240.0" styleClass="common-label" text="Teléfono" />
+                <Label fx:id="lblDireccion" layoutX="14.0" layoutY="540.0" prefWidth="240.0" styleClass="common-label" text="Dirección" />
+            <TextField fx:id="txtBuscador" layoutX="14.0" layoutY="59.0" onKeyPressed="#filtrarTabla" prefHeight="26.0" prefWidth="211.0" promptText="Buscar..." styleClass="textfield" />
+            <FontAwesomeIconView glyphName="SEARCH" layoutX="205.0" layoutY="77.0" />
+            <ComboBox fx:id="comboBuscador" layoutX="14.0" layoutY="22.0" onAction="#comboBuscadorOnAction" prefWidth="150.0" promptText="Seleccionar" />
+            <Label layoutX="14.0" layoutY="120.0" styleClass="list-label" text="DNI">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="200.0" styleClass="list-label" text="NOMBRE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="280.0" styleClass="list-label" text="APELLIDOS">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="360.0" styleClass="list-label" text="CORREO ELECTRÓNICO">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="440.0" styleClass="list-label" text="TELÉFONO">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="520.0" styleClass="list-label" text="DIRECCIÓN">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            </children>
+       </Pane>
+   </left>
+   <center>
+       <Pane prefHeight="640.0" prefWidth="1050.0" styleClass="pane" BorderPane.alignment="CENTER">
+           <children>
+                  <TableView fx:id="tblSocios" layoutX="50.0" layoutY="60.0" onMouseClicked="#tblSociosOnClick" prefHeight="454.0" prefWidth="950.0">
+                    <columns>
+                        <TableColumn fx:id="colId" prefWidth="52.0" text="ID" />
+                        <TableColumn fx:id="colDni" prefWidth="125.0" text="DNI" />
+                        <TableColumn fx:id="colNombre" prefWidth="140.0" text="Nombre" />
+                        <TableColumn fx:id="colApellidos" prefWidth="159.0" text="Apellidos" />
+                        <TableColumn fx:id="colEmail" prefWidth="167.0" text="Email" />
+                        <TableColumn fx:id="colTelefono" prefWidth="150.0" text="Teléfono" />
+                        <TableColumn fx:id="colDireccion" prefWidth="152.0" text="Dirección" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="btnAdd" layoutX="50.0" layoutY="559.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefWidth="172.0" text="Agregar socio" />
+                  <Button fx:id="btnModify" layoutX="439.0" layoutY="559.0" mnemonicParsing="false" onAction="#btnModifyOnAction" prefWidth="172.0" text="Modificar socio" />
+                  <Button fx:id="btnDelete" layoutX="828.0" layoutY="559.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefWidth="172.0" text="Eliminar socio" />
+            <Label fx:id="lblErrorModify" layoutX="439.0" layoutY="533.0" styleClass="error-label" textFill="RED">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblErrorEliminar" layoutX="828.0" layoutY="535.0" styleClass="error-label" textFill="RED" />
+               </children>
+       </Pane>
+   </center>
+</BorderPane>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="600.0" prefWidth="1067.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="biblioteca.controllers.TablaLibrosPrestadosController">
+   <children>
+        <BorderPane prefHeight="600.0" prefWidth="1300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <center>
+                <Pane prefHeight="600.0" prefWidth="1181.0" styleClass="pane" BorderPane.alignment="CENTER">
+                    <children>
+                        <TableView fx:id="tblLibrosPrestados" layoutX="72.0" layoutY="73.0" prefHeight="454.0" prefWidth="705.0">
+                            <columns>
+                                <TableColumn fx:id="colId" prefWidth="50.0" text="ID" />
+                                <TableColumn fx:id="colSocio" prefWidth="100.0" text="ID Socio" />
+                                <TableColumn fx:id="colLibro" prefWidth="100.0" text="Cod Libro" />
+                                <TableColumn fx:id="colPrestamo" prefWidth="165.0" text="Fecha préstamo" />
+                                <TableColumn fx:id="colLimite" prefWidth="165.0" text="Fecha límite" />
+                                <TableColumn fx:id="colDevolucion" prefWidth="120.0" text="Devolución" />
+                            </columns>
+                        </TableView>                    
+                    </children>
+                </Pane>
+            </center>
+         <left>
+            <Pane prefHeight="600.0" prefWidth="219.0" styleClass="pane" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="btnDevolver" layoutX="60.0" layoutY="287.0" mnemonicParsing="false" onAction="#btnDevolverOnAction" text="Devolver" />
+                  <Button fx:id="btnCancelar" layoutX="61.0" layoutY="461.0" mnemonicParsing="false" onAction="#btnCancelarOnAction" text="Cancelar" />
+                  <TextField fx:id="txtBuscador" layoutX="24.0" layoutY="115.0" onKeyPressed="#filtrarTabla" prefWidth="211.0" promptText="Buscar..." styleClass="textfield" />
+                  <ComboBox fx:id="comboBuscador" layoutX="24.0" layoutY="78.0" onAction="#comboBuscadorOnAction" prefWidth="150.0" promptText="Seleccionar" />
+                  <Label fx:id="lblErrorDevolucion" layoutX="43.0" layoutY="259.0" styleClass="error-label" textFill="RED">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIconView glyphName="SEARCH" layoutX="213.0" layoutY="134.0" />
+               </children>
+            </Pane>
+         </left>
+        </BorderPane>
+   </children>
+</AnchorPane>

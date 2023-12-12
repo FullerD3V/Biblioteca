@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="biblioteca.controllers.TablaPrestamoController">
+   <left>
+       <Pane prefHeight="640.0" prefWidth="250.0" styleClass="pane" BorderPane.alignment="CENTER">
+           <children>
+                <Label fx:id="lblId" layoutX="14.0" layoutY="140.0" prefWidth="240.0" styleClass="common-label" text="ID" />
+                <Label fx:id="lblSocio" layoutX="14.0" layoutY="220.0" prefWidth="240.0" styleClass="common-label" text="ID Socio" />
+                <Label fx:id="lblLibro" layoutX="14.0" layoutY="300.0" prefWidth="240.0" styleClass="common-label" text="Cod Libro" />
+                <Label fx:id="lblPrestamo" layoutX="14.0" layoutY="380.0" prefWidth="240.0" styleClass="common-label" text="Préstamo" />
+                <Label fx:id="lblDevolucion" layoutX="14.0" layoutY="540.0" prefWidth="240.0" styleClass="common-label" text="Devolución" />
+                <Label fx:id="lblLimite" layoutX="14.0" layoutY="460.0" prefWidth="240.0" styleClass="common-label" text="Fecha límite" />
+            <TextField fx:id="txtBuscador" layoutX="14.0" layoutY="59.0" onKeyPressed="#filtrarTabla" prefHeight="26.0" prefWidth="211.0" promptText="Buscar..." styleClass="textfield" />
+            <FontAwesomeIconView glyphName="SEARCH" layoutX="205.0" layoutY="77.0" />
+            <ComboBox fx:id="comboBuscador" layoutX="14.0" layoutY="22.0" onAction="#comboBuscadorOnAction" prefWidth="150.0" promptText="Seleccionar" />
+            <Label layoutX="14.0" layoutY="114.0" styleClass="list-label" text="ID">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <Label layoutX="14.0" layoutY="194.0" styleClass="list-label" text="ID SOCIO">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <Label layoutX="14.0" layoutY="282.0" styleClass="list-label" text="CÓDIGO LIBRO">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <Label layoutX="14.0" layoutY="356.0" styleClass="list-label" text="FECHA PRÉSTAMO">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <Label layoutX="14.0" layoutY="436.0" styleClass="list-label" text="FECHA LÍMITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <Label layoutX="14.0" layoutY="520.0" styleClass="list-label" text="ESTADO">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            </children>
+       </Pane>
+   </left>
+   <center>
+       <Pane prefHeight="640.0" prefWidth="1050.0" styleClass="pane" BorderPane.alignment="CENTER">
+           <children>
+                <TableView fx:id="tblPrestamos" layoutX="50.0" layoutY="60.0" onMouseClicked="#tblPrestamosOnClick" prefHeight="454.0" prefWidth="950.0">
+                  <columns>
+                      <TableColumn fx:id="colId" prefWidth="52.0" text="ID" />
+                      <TableColumn fx:id="colSocio" prefWidth="101.0" text="ID Socio" />
+                      <TableColumn fx:id="colLibro" prefWidth="136.0" text="Cod Libro" />
+                      <TableColumn fx:id="colPrestamo" prefWidth="187.0" text="Fecha préstamo" />
+                      <TableColumn fx:id="colLimite" prefWidth="227.0" text="Fecha límite" />
+                      <TableColumn fx:id="colDevolucion" prefWidth="242.0" text="Devolución" />
+                  </columns>
+                </TableView>
+                <Button fx:id="btnPrestar" layoutX="50.0" layoutY="559.0" mnemonicParsing="false" onAction="#btnPrestarOnAction" prefWidth="172.0" text="Realiza préstamo" />
+                <Button fx:id="btnDevolver" layoutX="575.0" layoutY="559.0" mnemonicParsing="false" onAction="#btnDevolverOnAction" prefWidth="172.0" text="Devolver libro" />
+                <Button fx:id="btnDelete" layoutX="828.0" layoutY="559.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefWidth="172.0" text="Eliminar préstamo" />
+            <Button fx:id="btnAplazar" layoutX="303.0" layoutY="559.0" mnemonicParsing="false" onAction="#btnAplazarOnAction" prefWidth="172.0" text="Aplazar préstamo" />
+            <Label fx:id="lblAvisoAplazamiento" layoutX="303.0" layoutY="530.0" styleClass="error-label" textFill="RED" />
+            <Label fx:id="lblErrorEliminar" layoutX="828.0" layoutY="530.0" styleClass="error-label" textFill="RED">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            </children>
+       </Pane>
+   </center>
+</BorderPane>

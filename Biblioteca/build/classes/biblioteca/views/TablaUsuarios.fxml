@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane id="AnchorPane" fx:id="borderPane" prefHeight="640" prefWidth="1300" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="biblioteca.controllers.TablaUsuariosController">
+   <center>
+      <Pane prefHeight="640.0" prefWidth="1050.0" styleClass="pane" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="tblUsuarios" layoutX="125.0" layoutY="60.0" onMouseClicked="#tblUsuariosOnClick" prefHeight="450.0" prefWidth="800.0">
+               <columns>
+                  <TableColumn fx:id="colId" prefWidth="130.0" text="ID" />
+                  <TableColumn fx:id="colNombre" prefWidth="283.0" text="Nombre" />
+                  <TableColumn fx:id="colRol" minWidth="0.0" prefWidth="383.0" text="Rol" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </center>
+   <left>
+      <Pane prefHeight="200.0" prefWidth="250.0" styleClass="pane" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnCreate" layoutX="38.0" layoutY="121.0" mnemonicParsing="false" onAction="#btnCreateOnAction" prefWidth="172.0" text="Crear usuario" />
+            <Button fx:id="btDelete" layoutX="39.0" layoutY="433.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefWidth="172.0" text="Eliminar usuario" />
+            <Label fx:id="lblErrorEliminar" layoutX="38.0" layoutY="407.0" styleClass="error-label" textFill="RED">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </left>
+</BorderPane>
